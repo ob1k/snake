@@ -16,7 +16,7 @@ function preload(){
 function setup() {
   createCanvas(500,400);
   s = new Snake();
-  frameRate(12);
+  frameRate(10);
   pickLocation();
 
 }
@@ -41,7 +41,7 @@ function pickLocation() {
 }
 
 function draw() {
-  background(51);
+ background(51);
   
   if (s.eat(food)) {
     pickLocation();
@@ -80,7 +80,7 @@ function Snake() {
   this.show = function() {
     fill(255, 0, 200, 150);
     imageMode(CENTER);
-    image(img, this.x, this.y, 10, 10);
+    image(img, this.x, this.y, 32, 32);
     
   }
 }

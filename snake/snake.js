@@ -59,7 +59,7 @@ function Snake() {
      ellipse(this.tail[i].x, this.tail[i].y, scl, scl);
     }
     imageMode(CENTER);
-    image(img, this.x, this.y, scl, scl);
+    image(img, this.x, this.y, 32, 32);
     
   }
 }
