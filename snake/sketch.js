@@ -3,10 +3,12 @@ var scl = 20;
 
 var food;
 var img;
+var imgb;
 var song;
 var button;
 function preload(){
   img = loadImage('image/obface.png');
+  imgb = loadImage('image/taco.png');
   song = loadSound("tune.mp3");
   button= createButton("play music");
   button.mousePressed(togglePlaying);
@@ -41,7 +43,7 @@ function pickLocation() {
 }
 
 function draw() {
- background(51);
+ background(125, 225, 180);
   
   if (s.eat(food)) {
     pickLocation();
@@ -51,7 +53,7 @@ function draw() {
   s.show();
   noStroke();
   fill(255, 0, 100, 150);
-  ellipse(food.x, food.y, scl, scl);
+  image(imgb, food.x, food.y, 40, 40);
 }
   
 function keyPressed() {
