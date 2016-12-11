@@ -20,13 +20,14 @@ function pickLocation() {
 
 function draw() {
   background(51);
-  s.update();
-  s.show();
   
   if (s.eat(food)) {
     pickLocation();
   }
-
+  s.death();
+  s.update();
+  s.show();
+  
   fill(255, 0, 100);
   ellipse(food.x, food.y, scl, scl);
 }
