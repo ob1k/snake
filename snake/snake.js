@@ -54,7 +54,7 @@ function Snake() {
   }
   
   this.show = function() {
-    fill(255);
+    fill(130, 50, 60);
     for (var i = 0; i < this.tail.length; i++) {
      ellipse(this.tail[i].x, this.tail[i].y, scl, scl);
     }
