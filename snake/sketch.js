@@ -3,9 +3,14 @@ var scl = 20;
 
 var food;
 var img;
-
+var song;
+var button;
 function preload(){
   img = loadImage('image/obface.png');
+  song = loadSound("tune.mp3");
+  button= createButton("play music");
+  button.mousePressed(togglePlaying);
+  
 }
 
 function setup() {
@@ -14,6 +19,18 @@ function setup() {
   frameRate(12);
   pickLocation();
 
+}
+
+function togglePlaying(){
+  if (!song.isPlaying()){
+  song.loop();
+    song.setVolume(0.3);
+    button.html("pause music");
+  } else {
+    song.pause();
+    button.html("play music");
+    
+  }
 }
 
 function pickLocation() {
