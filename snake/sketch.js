@@ -2,6 +2,11 @@ var s;
 var scl = 20;
 
 var food;
+var img;
+
+function preload(){
+  img = loadImage('image/obface.png');
+}
 
 function setup() {
   createCanvas(500,400);
@@ -27,8 +32,8 @@ function draw() {
   s.death();
   s.update();
   s.show();
-  
-  fill(255, 0, 100);
+  noStroke();
+  fill(255, 0, 100, 150);
   ellipse(food.x, food.y, scl, scl);
 }
   
@@ -56,8 +61,9 @@ function Snake() {
   }
   
   this.show = function() {
-    fill(200);
-    ellipse(this.x, this.y, 10, 10);
+    fill(255, 0, 200, 150);
+    imageMode(CENTER);
+    image(img, this.x, this.y, 10, 10);
     
   }
 }
