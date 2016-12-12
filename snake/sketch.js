@@ -1,12 +1,15 @@
 var s;
-var scl = 20;
+var scl = 25;
 
 var food;
 var img;
 var imgb;
 var song;
 var button;
+var eatSound;
+
 function preload(){
+  eatSound = loadSound("sound/eat.mp3");
   img = loadImage('image/obface.png');
   imgb = loadImage('image/taco.png');
   song = loadSound("tune.mp3");
@@ -16,7 +19,7 @@ function preload(){
 }
 
 function setup() {
-  createCanvas(500,400);
+  createCanvas(450,400);
   s = new Snake();
   frameRate(10);
   pickLocation();
@@ -46,6 +49,7 @@ function draw() {
  background(125, 225, 180);
   
   if (s.eat(food)) {
+    eatSound.play();
     pickLocation();
   }
   s.death();
